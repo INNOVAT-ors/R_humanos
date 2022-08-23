@@ -1,0 +1,103 @@
+{% extends "layout.html" %} {% block content %}
+
+<head>
+    <title>HOME-INT</title>
+</head>
+<script src="https://kit.fontawesome.com/c8a4eef53d.js" crossorigin="anonymous"></script>
+<body style="background-color:#ffff;">
+<form action="/agrega_percepcion" method="post">
+    <style>
+        .content-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9en;
+            min-width: 600px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
+        }
+        
+        .content-table thead tr {
+            background-color: #333769;
+            color: #ffff;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+        }
+        
+        .content-table tbody tr {
+            border-bottom: 1px solid #dddd;
+        }
+        
+        .content-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        
+        .content-table tbody tr:last-of-type {
+            border-bottom: 2px solid #333769;
+        }
+        
+        .content-table tbody tr.active-row {
+            font-weight: bold;
+            color: #333769;
+        }
+    </style>
+    <br>
+             <div class="panel panel-primary">
+              <div class="panel-heading" >
+                <form class="form-inline" action="/agrega_hab_pto/{{percepcion.0[0]}}" method="post">
+                  <div class="form-row">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <input type="hidden" name="pto" id="pto" value="{{percepcion.0[0]}}">
+
+                      <label for="expe">Percepcion</label>&nbsp;&nbsp;&nbsp;
+                      <input type="text" class="form-control" name="expe" id="expe" placeholder="tiempo de experiencia" required>&nbsp;&nbsp;&nbsp;
+                                 {%
+                                     for hab in habs
+                                 %}
+                                     <option value="{{ hab.0 }}">{{ hab.1 }}</option>
+                                {%   endfor %}
+                             <label for="expe">Monto</label>&nbsp;&nbsp;&nbsp;
+                             <input type="text" class="form-control" name="expe" id="expe" placeholder="tiempo de experiencia" required>&nbsp;&nbsp;&nbsp;
+                             <label for="expe">Periodo</label>&nbsp;&nbsp;&nbsp;
+                             <input type="text" class="form-control" name="expe" id="expe" placeholder="tiempo de experiencia" required>&nbsp;&nbsp;&nbsp;
+                         </div>&nbsp;&nbsp;&nbsp;
+                        <button type="submit" class="btn btn-primary">Agrega Extras</button>
+                    </form>
+                  </div>
+                  <br>
+                  <center>
+                    <table class="content-table">
+                  </center>
+                  <thead>
+                    <tr>
+                      <th>Puesto</th>
+                      <th>Monto</th>
+                      <th>Periodo</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for puesto in pue_habs %}
+                    <tr>
+                      <td>
+                        {{ puesto.2 }}
+                      </td>
+                      <td>
+                        {{ puesto.5 }}
+                      </td>
+                      <td  bgcolor="#FFF5757" width="60">
+                        <center><a href="/bo_hab_pto/{{percepcion.0}}/{{percepcion.4}}" style="color:#FFFFFF; text-decoration:none;">Borrar &nbsp;<i class="far fa-edit"></i></a></center>
+                      </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+                  </table>
+</form>
+</body>
+{% endblock %}

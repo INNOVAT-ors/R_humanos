@@ -1,0 +1,459 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<head>
+    <title>HOME-INT</title>
+</head>
+<body style="background-color:#ffff;">
+<script src="https://kit.fontawesome.com/c8a4eef53d.js" crossorigin="anonymous"></script>
+<h2>Editar percepcion</h2>
+    <form action="/modifica_percepciones/{{percepcion.0}}" method="post">
+        <div class="form-row">
+                &nbsp;&nbsp;&nbsp;
+            <div class="form-group col-md-2">
+                <label for="concepto">Concepto</label>
+                <!--<input type="text" class="form-control" name="concepto" id="concepto" value="{{percepcion.0[1]}}" placeholder="Nombre del conecepto de pago"  required>-->
+                <!--<input type="text" class="form-control" name="concepto" value="{{percepcion.0[1]}}" id="concepto" placeholder="Nombre del conecepto de pago" required>-->
+                <input type="text" class="form-control" value="{{percepcion.1}}" name="concepto" id="concepto"  placeholder="Nombre de la percepción" required>
+            </div>
+            
+            
+                <div class="form-group col-md-4">
+                    <label for="mes">Mes</label>
+                    <select required name="mes" id="mes" class="form-control">
+                        <option value="" selected required>Choose...</option>
+                        {% if percepcion[6]==1 %}
+                            <option value="1" selected>Enero</option>
+                        {% else %}
+                            <option value="1">Enero</option>
+                        {% endif %}
+                        {% if percepcion[6]==2 %}
+                            <option value="2" selected>Febrero</option>
+                        {% else %}
+                            <option value="2">Febrero</option>
+                        {% endif %}
+                        {% if percepcion[6]==3 %}
+                            <option value="3" selected>Marzo</option>
+                        {% else %}
+                            <option value="3">Marzo</option>
+                        {% endif %}
+                        {% if percepcion[6]==4 %}
+                            <option value="4" selected>Abril</option>
+                        {% else %}
+                            <option value="4">Abril</option>
+                        {% endif %}
+                        {% if percepcion[6]==5 %}
+                            <option value="5" selected>Mayo</option>
+                        {% else %}
+                            <option value="5">Mayo</option>
+                        {% endif %}
+                        {% if percepcion[6]==6 %}
+                            <option value="6" selected>Junio</option>
+                        {% else %}
+                            <option value="6">Junio</option>
+                        {% endif %}
+                        {% if percepcion[6]==7 %}
+                            <option value="7" selected>Julio</option>
+                        {% else %}
+                            <option value="7">Julio</option>
+                        {% endif %}
+                        {% if percepcion[6]==8 %}
+                            <option value="8" selected>Agosto</option>
+                        {% else %}
+                            <option value="8">Agosto</option>
+                        {% endif %}
+                        {% if percepcion[6]==9 %}
+                            <option value="9" selected>Septiembre</option>
+                        {% else %}
+                            <option value="9">Septiembre</option>
+                        {% endif %}
+                        {% if percepcion[6]==10 %}
+                            <option value="10" selected>Octubre</option>
+                        {% else %}
+                            <option value="10">Octubre</option>
+                        {% endif %}
+                        {% if percepcion[6]==11 %}
+                            <option value="11" selected>Noviembre</option>
+                        {% else %}
+                            <option value="11">Noviembre</option>
+                        {% endif %}
+                        {% if percepcion[6]==12 %}
+                            <option value="12" selected>Diciembre</option>
+                        {% else %}
+                            <option value="12">Diciembre</option>
+                        {% endif %}
+                        
+                        
+                    </select>&nbsp;
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="dia">Día</label>
+                    <select required name="dia" id="dia" class="form-control">
+                        <option value="" selected required>Choose...</option>
+                        {% if percepcion[5]==1 %}
+                            <option value="1" selected>1</option>
+                        {% else %}
+                            <option value="1">1</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==2 %}
+                            <option value="2" selected>2</option>
+                        {% else %}
+                            <option value="2">2</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==3 %}
+                            <option value="3" selected>3</option>
+                        {% else %}
+                            <option value="3">3</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==4 %}
+                            <option value="4" selected>4</option>
+                        {% else %}
+                            <option value="4">4</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==5 %}
+                            <option value="5" selected>5</option>
+                        {% else %}
+                            <option value="5">5</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==6 %}
+                            <option value="6" selected>6</option>
+                        {% else %}
+                            <option value="6">6</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==7 %}
+                            <option value="7" selected>7</option>
+                        {% else %}
+                            <option value="7">7</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==8 %}
+                            <option value="8" selected>8</option>
+                        {% else %}
+                            <option value="8">8</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==9 %}
+                            <option value="9" selected>9</option>
+                        {% else %}
+                            <option value="9">9</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==10 %}
+                            <option value="10" selected>10</option>
+                        {% else %}
+                            <option value="10">10</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==11 %}
+                            <option value="11" selected>11</option>
+                        {% else %}
+                            <option value="11">11</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==12 %}
+                            <option value="12" selected>12</option>
+                        {% else %}
+                            <option value="12">12</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==13 %}
+                            <option value="13" selected>13</option>
+                        {% else %}
+                            <option value="13">13</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==14 %}
+                            <option value="14" selected>14</option>
+                        {% else %}
+                            <option value="14">14</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==15 %}
+                            <option value="15" selected>15</option>
+                        {% else %}
+                            <option value="15">15</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==16 %}
+                            <option value="16" selected>16</option>
+                        {% else %}
+                            <option value="16">16</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==17 %}
+                            <option value="17" selected>17</option>
+                        {% else %}
+                            <option value="17">17</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==18 %}
+                            <option value="18" selected>18</option>
+                        {% else %}
+                            <option value="18">18</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==19 %}
+                            <option value="19" selected>19</option>
+                        {% else %}
+                            <option value="19">19</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==20 %}
+                            <option value="20" selected>20</option>
+                        {% else %}
+                            <option value="20">20</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==21 %}
+                            <option value="21" selected>21</option>
+                        {% else %}
+                            <option value="21">21</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==22 %}
+                            <option value="22" selected>22</option>
+                        {% else %}
+                            <option value="22">22</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==23 %}
+                            <option value="23" selected>23</option>
+                        {% else %}
+                            <option value="23">23</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==24 %}
+                            <option value="24" selected>24</option>
+                        {% else %}
+                            <option value="24">24</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==25 %}
+                            <option value="25" selected>25</option>
+                        {% else %}
+                            <option value="25">25</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==26 %}
+                            <option value="26" selected>26</option>
+                        {% else %}
+                            <option value="26">26</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==27 %}
+                            <option value="27" selected>27</option>
+                        {% else %}
+                            <option value="27">27</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==28 %}
+                            <option value="28" selected>28</option>
+                        {% else %}
+                            <option value="28">28</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==29 %}
+                            <option value="29" selected>29</option>
+                        {% else %}
+                            <option value="29">29</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==30 %}
+                            <option value="30" selected>30</option>
+                        {% else %}
+                            <option value="30">30</option>
+                        {% endif %}
+                        <!-------------------------------------------------->
+                        {% if percepcion[5]==31 %}
+                            <option value="31" selected>31</option>
+                        {% else %}
+                            <option value="31">31</option>
+                        {% endif %}
+                              
+                    </select>&nbsp;
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="tipo_cpto">Tipo de concepto</label>
+                    <select required name="tipo_cpto" id="tipo_cpto" class="form-control">
+                        <option value="" selected required>Choose...</option>
+                        {% if percepcion[2]== 0 %}
+                            <option value="0" selected>Persona</option>
+                        {% else %}
+                            <option value="0">Persona</option>
+                        {% endif %}
+                        {% if percepcion[2]== 1 %}
+                            <option value="1" selected>Nómina</option>
+                        {% else %}
+                            <option value="1">Nómina</option>
+                        {% endif %}
+                    </select>&nbsp;
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="tipo">Tipos de nomina</label>
+                    <select required name="tipo" id="tipo" class="form-control">
+                        <option value="" selected required>Choose...</option>
+                            {% for tipos in tipos_nom %}
+                                {% if percepcion[3]==tipos.0%}
+                                    <option value="{{ tipos.0 }}" selected>{{ tipos.1 }}</option>
+                                {% else %}
+                                    <option value="{{ tipos.0 }}"> {{ tipos.1 }}</option>
+                                {% endif %}
+                            {% endfor %}
+                    </select>&nbsp;
+                </div>
+                
+                <div class="form-group col-md-4">
+                    <label for="dia_por">Tipo de cálculo</label>
+                    <select required name="autoriza" id="autoriza" class="form-control">
+                        <option value="0" selected required>Choose...</option>
+                        {% if percepcion[4]== 1 %}
+                            <option value="1" selected>Día</option>
+                        {% else %}
+                            <option value="1">Día</option>
+                        {% endif %}
+                        {% if percepcion[4]== 2 %}
+                            <option value="2" selected>Porcentaje</option>
+                        {% else %}
+                            <option value="2">Porcentaje</option>
+                        {% endif %}
+                    </select>&nbsp;
+                </div>
+        </div>
+        
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <br>
+                <button type="submit" class="btn btn-primary">Enviar Cambios &nbsp;<i class="fas fa-paper-plane"></i></button>
+                <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+                <script type="text/javascript" src="/static/js/popper.min.js"></script>
+                <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+
+    <a class="btn btn-primary" href="/percepciones" align="right">Regresar &nbsp;<i class="fas fa-undo-alt"></i></a>
+    </form>
+    <!---------------------------------------------------------------------------------------------------------------------------------->
+    
+    <style>
+        .content-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9en;
+            min-width: 600px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgb(0, 0, 0, 0.15);
+        }
+        
+        .content-table thead tr {
+            background-color: #333769;
+            color: #ffff;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        .content-table th,
+        .content-table td {
+            padding: 12px 15px;
+        }
+        
+        .content-table tbody tr {
+            border-bottom: 1px solid #dddd;
+        }
+        
+        .content-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+        
+        .content-table tbody tr:last-of-type {
+            border-bottom: 2px solid #333769;
+        }
+        
+        .content-table tbody tr.active-row {
+            font-weight: bold;
+            color: #333769;
+        }
+      </style>
+
+<!------------estilo de tabla --------------------------------------------->
+
+      <form action="/agrega_per_puesto/{{percepcion.0}}" method="post">
+        <br>
+        <center><h3>Percepciones  por puesto</h3></center><br>
+        <div class="panel panel-primary">
+            <div class="panel-heading" >
+                <form class="form-inline" action="/agrega_per_puesto/{{per_puesto.0}}" method="post">
+                    <div class="form-row">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <input type="hidden" name="per" id="per" value="{{per_puesto.0}}">
+        
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="puesto">Puesto</label>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select required name="puesto" id="puesto" class="form-control" style="width: 200px;">
+                              <option value="" selected>Choose...</option>
+                                  {%
+                                      for puesto in puestos
+                                  %}
+                                      <option value="{{ puesto.0 }}">{{ puesto.1 }}</option>
+                                 {%   endfor %}            
+                                </select>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="periodo">Periodo</label>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select  name="periodo" id="periodo" class="form-control" style="width: 200px;">
+                                    <option value="" selected>Choose...</option>
+                                         {%
+                                             for periodo in periodos
+                                         %}
+                                             <option value="{{ periodo.0 }}">{{ periodo.1 }}</option>
+                                        {%   endfor %}            
+                                    </select>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="monto">Monto</label>
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="form-control" name="monto" id="monto" placeholder="monto" required style="width: 200px;">
+  
+                          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" href="/agrega_per_puesto" class="btn btn-primary">Agrega </button>
+                            </form>
+                          </div>
+                    <br>
+                    <center>
+                      <table class="content-table">
+                    </center>
+                    <thead>
+                      <tr>
+                        <th>Puesto</th>
+                        <th>Periodo</th>
+                        <th>Monto</th>
+                        <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {% for mon in per_puesto %}
+                      <tr>
+                        <td>
+                          {{ mon.2 }}
+                        </td>
+                        <td>
+                          {{ mon.4 }}
+                        </td>
+                        <td>
+                            {{ mon.7 }}
+                          </td>
+                        <td  bgcolor="#FFF5757" width="60">
+                          <center><a href="/bor_per_puesto/{{mon.0}}/{{mon.1}}" style="color:#FFFFFF; text-decoration:none;">Borrar &nbsp;<i class="far fa-edit"></i></a></center>
+                        </td>
+                      </tr>
+                      {% endfor %}
+                    </tbody>
+                    </table>
+                    <br><br>
+        <center>
+            <a class="btn btn-primary" href="/percepciones" align="right">Regresar &nbsp;<i class="fas fa-undo-alt"></i></a>
+        </center>
+        <br><br>
+      
+    </form>
+            
+</body>
+
+{% endblock %}

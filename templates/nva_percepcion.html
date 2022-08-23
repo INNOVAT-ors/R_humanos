@@ -1,0 +1,119 @@
+{% extends "layout.html" %} {% block content %}
+
+<head>
+    <title>HOME-INT</title>
+</head>
+<script src="https://kit.fontawesome.com/c8a4eef53d.js" crossorigin="anonymous"></script>
+<body style="background-color:#ffff;">
+<form action="/agrega_percepcion" method="post">
+<h2>Agregar percepcion</h2>
+    <script type="text/javascript" src="/static/js/jquery-3.2.1.slim.min.js"></script>
+    <script type="text/javascript" src="/static/js/popper.min.js"></script>
+    <script type="text/javascript" src="/static/js/bootstrap.min.js"></script>
+    <div class="form-row">
+        <div class="form-group col-md-10">
+            <label for="concepto">Descripcion</label>
+            <input type="text" class="form-control" name="concepto" id="concepto" placeholder="Nombre del concepto de pago" required>
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <div class="form-group col-md-5">
+            <label for="mes">Mes</label>
+            <select required name="mes" id="mes" class="form-control">
+                <option value="1" selected required>Enero</option>
+                <option value="2" selected required>Febrero</option>
+                <option value="3" selected required>Marzo</option>
+                <option value="4" selected required>Abril</option>
+                <option value="5" selected required>Mayo</option>
+                <option value="6" selected required>Junio</option>
+                <option value="7" selected required>Julio</option>
+                <option value="8" selected required>Agosto</option>
+                <option value="9" selected required>Septiembre</option>
+                <option value="10" selected required>Octubre</option>
+                <option value="11" selected required>Noviembre</option>
+                <option value="12" selected required>Diciembre</option>
+                <option value="0" selected required>Choose...</option>
+            </select>&nbsp;
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        <div class="form-group col-md-5">
+            <label for="dia">Dia</label>
+            <select required name="dia" id="dia" class="form-control">
+                <option value="1" selected required>1</option>
+                <option value="2" selected required>2</option>
+                <option value="3" selected required>3</option>
+                <option value="4" selected required>4</option>
+                <option value="5" selected required>5</option>
+                <option value="6" selected required>6</option>
+                <option value="7" selected required>7</option>
+                <option value="8" selected required>8</option>
+                <option value="9" selected required>9</option>
+                <option value="10" selected required>10</option>
+                <option value="11" selected required>11</option>
+                <option value="12" selected required>12</option>
+                <option value="13" selected required>13</option>
+                <option value="14" selected required>14</option>
+                <option value="15" selected required>15</option>
+                <option value="16" selected required>16</option>
+                <option value="17" selected required>17</option>
+                <option value="18" selected required>18</option>
+                <option value="19" selected required>19</option>
+                <option value="20" selected required>20</option>
+                <option value="21" selected required>21</option>
+                <option value="22" selected required>22</option>
+                <option value="23" selected required>23</option>
+                <option value="24" selected required>24</option>
+                <option value="25" selected required>25</option>
+                <option value="26" selected required>26</option>
+                <option value="27" selected required>27</option>
+                <option value="28" selected required>28</option>
+                <option value="29" selected required>29</option>
+                <option value="30" selected required>30</option>
+                <option value="31" selected required>31</option>
+                <option value="0" selected required>Choose...</option>
+            </select>&nbsp;
+        </div>
+        &nbsp;&nbsp;&nbsp;
+        
+        <div class="form-group col-md-5">
+            <label for="tipo_cpto">Tipo de concepto</label>
+            <select required name="tipo_cpto" id="tipo_cpto" class="form-control">
+                
+                <option value="0" selected required>Persona</option>
+                <option value="1" selected required>Nomina</option>
+                <option value="" selected required>Choose...</option>
+            </select>
+        </div>
+
+        
+        &nbsp;&nbsp;&nbsp;
+        <div class="form-group col-md-5">
+            <label for="tipo">Tipos de nomina</label>&nbsp;
+            <select required name="tipo" id="tipo" class="form-control">
+                <option value="" selected required>Choose...</option>
+                    {% for tipos in tipos_nom %}
+                        <option value="{{ tipos.0 }}">{{ tipos.1 }}</option>
+                    {%  endfor %}
+            </select>
+        </div>
+    </div><br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
+        
+    <div class="form-group col-md-5">
+        <label for="autoriza">Tipo de cálculo</label>
+        <select required name="autoriza" id="autoriza" class="form-control">
+            <option value="1" selected required>Día</option>
+            <option value="2" selected required>Porcentaje</option>
+            <option value="0" selected required>Choose...</option>
+        </select>
+    </div>
+
+    </div><br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary">Agregar &nbsp;<i class="fas fa-plus"></i></button>
+        <a class="btn btn-primary" href="/percepciones" align="right">Regresar &nbsp;<i class="fas fa-undo-alt"></i></a>
+    
+</form>
+</body>
+{% endblock %}
